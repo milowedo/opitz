@@ -3,7 +3,6 @@ package pl.opitz.consulting.caseweek.DynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 @DynamoDBTable(tableName="Results")
@@ -26,7 +25,7 @@ public class CatalogItem{
         return "TASK= "+task+" RESULT= "+result;
     }
 
-    CatalogItem(String r, String t){
+    public CatalogItem(String r, String t){
         task=t;
         result=r;
     }

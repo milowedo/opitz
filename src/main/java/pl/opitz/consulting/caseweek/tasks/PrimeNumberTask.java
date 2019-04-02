@@ -1,5 +1,7 @@
 package pl.opitz.consulting.caseweek.tasks;
 
+import pl.opitz.consulting.caseweek.DynamoDB.CatalogItem;
+import pl.opitz.consulting.caseweek.DynamoDB.DAO;
 import pl.opitz.consulting.caseweek.model.PrimeNumberTaskRequest;
 import pl.opitz.consulting.caseweek.model.PrimeNumberTaskResponse;
 
@@ -9,6 +11,8 @@ public class PrimeNumberTask implements Task<PrimeNumberTaskRequest, PrimeNumber
     public PrimeNumberTaskResponse resolveTask(PrimeNumberTaskRequest request) {
 
         int n = request.getNumber();
+
+        DAO d=new DAO();
 
         int remainder;
         boolean isPrime=true;
@@ -23,7 +27,7 @@ public class PrimeNumberTask implements Task<PrimeNumberTaskRequest, PrimeNumber
             }
         }
 
-
+        d.save(new CatalogItem(request.getTask().toString(),String.valueOf(isPrime)));
         return new PrimeNumberTaskResponse(isPrime);
     }
 }

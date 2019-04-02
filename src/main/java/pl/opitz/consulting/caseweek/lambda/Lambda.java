@@ -5,6 +5,8 @@ import com.amazonaws.services.lambda.model.InvocationType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import org.apache.log4j.Logger;
+import pl.opitz.consulting.caseweek.DynamoDB.CatalogItem;
+import pl.opitz.consulting.caseweek.DynamoDB.DAO;
 import pl.opitz.consulting.caseweek.model.*;
 import pl.opitz.consulting.caseweek.tasks.*;
 
@@ -30,7 +32,10 @@ public class Lambda {
   public Object getRequestAndReturnResponse(LambdaRequest request) throws IOException {
     ObjectMapper objectMapper = new ObjectMapper();
 
+
     LOG.debug(objectMapper.writeValueAsString(request));
+
+
 
     switch (request.getTask()) {
       case LAMBDA_DEPLOYED:
@@ -50,6 +55,8 @@ public class Lambda {
       default:
         return null;
     }
+
+
   }
 
 }
