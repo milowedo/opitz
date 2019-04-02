@@ -13,11 +13,11 @@ public class PrimeNumberTaskResponse extends TaskResponse{
         this.primeNumber = n;
     }
 
-    public boolean getPrime() {
+    public boolean isPrimeNumber() {
         return primeNumber;
     }
 
-    public void setPrime(boolean p) {
-        this.primeNumber = p;
+    public void setPrimeNumber(boolean primeNumber) {
+        this.primeNumber = primeNumber;
     }
 }

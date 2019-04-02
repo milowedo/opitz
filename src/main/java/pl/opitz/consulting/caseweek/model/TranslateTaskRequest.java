@@ -2,16 +2,20 @@ package pl.opitz.consulting.caseweek.model;
 
 public class TranslateTaskRequest extends TaskRequest {
 
-    String sentanceToTranslate;
+    String translate;
 
     public TranslateTaskRequest() {setTask(Task.TRANSLATE);}
 
     public TranslateTaskRequest(String sentance) {
         this();
-        sentanceToTranslate = sentance;
+        translate = sentance;
     }
 
-    public String getSentanceToTranslate() {
-        return sentanceToTranslate;
+    public String getTranslate() {
+        return translate;
+    }
+
+    public void setTranslate(String translate) {
+        this.translate = translate;
     }
 }
