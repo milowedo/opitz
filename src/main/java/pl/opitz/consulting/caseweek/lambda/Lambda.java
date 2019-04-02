@@ -23,7 +23,7 @@ public class Lambda {
     this.rectangleTask = TaskFactory.instance().createRecentagleTask();
     this.palindromeTask = TaskFactory.instance().createPalindromeTask();
     this.translateTask = TaskFactory.instance().createTranslateTask();
-    this.primeNumberTask = TaskFactory.instance().createPrieNumberTask();
+    this.primeNumberTask = TaskFactory.instance().createPrimeNumberTask();
   }
 
   @LambdaFunction(invocationType = InvocationType.RequestResponse)
