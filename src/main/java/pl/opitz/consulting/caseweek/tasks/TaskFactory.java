@@ -24,4 +24,6 @@ public class TaskFactory {
   public PalindromeTask createPalindromeTask() {
     return new PalindromeTask();
   }
+
+  public TranslateTask createTranslateTask() {return new TranslateTask();}
 }
