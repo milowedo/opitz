@@ -3,9 +3,10 @@ package pl.opitz.consulting.caseweek.tasks;
 import com.amazonaws.auth.*;
 import pl.opitz.consulting.caseweek.model.TranslateTaskRequest;
 import pl.opitz.consulting.caseweek.model.TranslateTaskResponse;
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.client.builder.AwsClientBuilder;
-import com.amazonaws.services.*;
+import com.amazonaws.services.translate.AmazonTranslate;
+import com.amazonaws.services.translate.AmazonTranslateClient;
+import com.amazonaws.services.translate.model.TranslateTextRequest;
+import com.amazonaws.services.translate.model.TranslateTextResult;
 
 import static com.amazonaws.auth.profile.internal.ProfileKeyConstants.REGION;
 
@@ -22,6 +23,6 @@ public class TranslateTask implements Task<TranslateTaskRequest, TranslateTaskRe
                 .withTargetLanguageCode("es");
         TranslateTextResult result  = translate.translateText(translateRequest);
 
-        return TranslateTaskResponse(result);
+        return new TranslateTaskResponse(result.getTranslatedText());
     }
 }
