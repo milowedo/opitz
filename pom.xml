@@ -60,6 +60,12 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-translate -->
+      <dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-java-sdk-translate</artifactId>
+        <version>1.11.240</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
