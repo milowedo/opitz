@@ -17,11 +17,13 @@ public class Lambda {
   private RectangleTask rectangleTask;
   private PalindromeTask palindromeTask;
   private TranslateTask translateTask;
+  private PrimeNumberTask primeNumberTask;
 
   public Lambda() {
     this.rectangleTask = TaskFactory.instance().createRecentagleTask();
     this.palindromeTask = TaskFactory.instance().createPalindromeTask();
     this.translateTask = TaskFactory.instance().createTranslateTask();
+    this.primeNumberTask = TaskFactory.instance().createPrieNumberTask();
   }
 
   @LambdaFunction(invocationType = InvocationType.RequestResponse)
@@ -42,6 +44,9 @@ public class Lambda {
       case TRANSLATE:
         return translateTask.resolveTask(
                 objectMapper.readValue(request.getRequestAsJson(), TranslateTaskRequest.class));
+        case PRIME_NUMBER:
+            return primeNumberTask.resolveTask(
+                objectMapper.readValue(request.getRequestAsJson(), PrimeNumberTaskRequest.class));
       default:
         return null;
     }
