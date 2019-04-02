@@ -24,12 +24,7 @@ public class PrimeNumberTask implements Task<PrimeNumberTaskRequest, PrimeNumber
         }
 
 
-        if(isPrime) {
-            return new PrimeNumberTaskResponse(true);
-        }
-
-
-        return new PrimeNumberTaskResponse(false);;
+        return new PrimeNumberTaskResponse(isPrime);
     }
 }
 
