@@ -12,7 +12,7 @@ public class PrimeNumberTask implements Task<PrimeNumberTaskRequest, PrimeNumber
 
         int remainder;
         boolean isPrime=true;
-
+        if(n <= 2)  return new PrimeNumberTaskResponse(false);
         for(int i=2;i<=n/2;i++)
         {
             remainder=n%i;

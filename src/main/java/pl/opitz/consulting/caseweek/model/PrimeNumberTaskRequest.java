@@ -17,9 +17,7 @@ public class PrimeNumberTaskRequest extends TaskRequest{
         return number;
     }
 
-    public void setNumber(int n) {
-        this.number = n;
+    public void setNumber(int number) {
+        this.number = number;
     }
-
-
 }

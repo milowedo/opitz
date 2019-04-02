@@ -27,7 +27,7 @@ public class TaskFactory {
 
   public TranslateTask createTranslateTask() {return new TranslateTask();}
 
-  public PrimeNumberTask createPrieNumberTask() {
+  public PrimeNumberTask createPrimeNumberTask() {
     return new PrimeNumberTask();
     }
 }
